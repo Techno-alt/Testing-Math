@@ -127,7 +127,15 @@ public class MathTest {
     @ValueSource(doubles = {1, 5.0, 3.7, -1, -4.0, -4.9})
     public void testZeroBase(double exponent) {
         // testing 0x = 0
-        Assertions.assertEquals(0, Math.pow(0, exponent));
+        double result = Math.pow(0, exponent);
+
+        if (exponent < 0) {
+            assertEquals(1.0 / 0.0, result);
+        } else if (exponent == 0) {
+            assertEquals(1.0, result);
+        } else {
+            assertEquals(0.0, result);
+        }
     }
 
 }
