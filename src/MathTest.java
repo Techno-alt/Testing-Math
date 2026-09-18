@@ -128,7 +128,6 @@ public class MathTest {
     public void testZeroBase(double exponent) {
         // testing 0x = 0
         double result = Math.pow(0, exponent);
-
         if (exponent < 0) {
             assertEquals(1.0 / 0.0, result);
         } else if (exponent == 0) {
